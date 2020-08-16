@@ -61,11 +61,8 @@ metadata:
     stack.appsody.dev/version: 0.2.10
   name: quote-frontend
 spec:
-  applicationImage: dev.local/quote-frontend
+  applicationImage: kabanero/quote-frontend
   createKnativeService: false
-  env:
-  - name: BACKEND_URL
-    value: http://quote-backend:8080/quote
   expose: true
   livenessProbe:
     failureThreshold: 12
@@ -90,5 +87,8 @@ spec:
       prometheus.io/scrape: "true"
     port: 3000
     type: NodePort
+  env:
+  - name: BACKEND_URL
+    value: http://quote-backend:8080/quote
   stack: nodejs-express
   version: 1.0.0

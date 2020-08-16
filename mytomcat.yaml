@@ -1,0 +1,6 @@
+apiVersion: apache.org/v1alpha1
+kind: Tomcat
+metadata:
+  name: mytomcat
+spec:
+  replicaCount: 2
